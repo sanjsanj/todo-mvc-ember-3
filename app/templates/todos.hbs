@@ -1,41 +1,38 @@
-<input type="text" id="new-todo" placeholder="What needs to be done?">
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns">
 
-<div id="main">
-  <ul id="todo-list">
-    <li class="completed">
-      <input type="checkbox" class="toggle">
-      <label>Learn Ember</label><button class="destroy"></button>
-    </li>
-    <li>
-      <input type="checkbox" class="toggle">
-      <label>...</label><button class="destroy"></button>
-    </li>
-    <li>
-      <input type="checkbox" class="toggle">
-      <label>Profit!</label><button class="destroy"></button>
-    </li>
-  </ul>
+    <input type="text" id="new-todo" placeholder="What needs to be done?">
 
-  <input type="checkbox" id="toggle-all">
+    <div class="">
+      <input type="checkbox" id="toggle-all">
+
+      <div id="todo-list">
+        {{#each todo in model}}
+          {{todo-item todo=todo}}
+        {{/each}}
+      </div>
+    </div>
+
+    <footer class="">
+      <span id="todo-count">
+        <strong>2</strong> todos left
+      </span>
+      <div id="filters">
+        <div>
+          <a href="all" class="selected">All</a>
+        </div>
+        <div>
+          <a href="active">Active</a>
+        </div>
+        <div>
+          <a href="completed">Completed</a>
+        </div>
+      </div>
+
+      <button id="clear-completed">
+        Clear completed (1)
+      </button>
+    </footer>
+
+  </div>
 </div>
-
-<footer id="footer">
-  <span id="todo-count">
-    <strong>2</strong> todos left
-  </span>
-  <ul id="filters">
-    <li>
-      <a href="all" class="selected">All</a>
-    </li>
-    <li>
-      <a href="active">Active</a>
-    </li>
-    <li>
-      <a href="completed">Completed</a>
-    </li>
-  </ul>
-
-  <button id="clear-completed">
-    Clear completed (1)
-  </button>
-</footer>
