@@ -1,14 +1,14 @@
 <div class="row">
   <div class="large-12 medium-12 small-12 columns">
 
-    {{input type="text" id="new-todo" placeholder="What needs to be done?" value=newTitle action="createTodo"}}
+    {{input type="text" id="new-todo" placeholder="What needs to be done?" value=newTitle enter="createTodo"}}
 
     <div class="">
       <input type="checkbox" id="toggle-all">
 
       <div id="todo-list">
-        {{#each todo in model}}
-          {{todo-item action="acceptChanges" todo=todo}}
+        {{#each model as |todo|}}
+          {{todo-item acceptChanges="acceptChanges" deleteTodo="deleteTodo" todo=todo}}
         {{/each}}
       </div>
     </div>
