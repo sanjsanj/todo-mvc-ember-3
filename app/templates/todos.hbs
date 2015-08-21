@@ -8,7 +8,7 @@
 
       <div id="todo-list">
         {{#each todo in model}}
-          {{todo-item todo=todo}}
+          {{todo-item action="acceptChanges" todo=todo}}
         {{/each}}
       </div>
     </div>
