@@ -3,11 +3,8 @@
 
     {{input type="text" id="new-todo" placeholder="What needs to be done?" value=newTitle enter="createTodo"}}
 
-    <div class="">
-      {{outlet}}
-      <input type="checkbox" id="toggle-all">
-    </div>
-
+    {{input type="checkbox" id="toggle-all" checked=allAreDone}}
+    {{outlet}}
 
     <footer class="">
       <span id="todo-count">
@@ -25,9 +22,11 @@
         </div>
       </div>
 
-      <button id="clear-completed">
-        Clear completed (1)
-      </button>
+      {{#if hasCompleted}}
+        <button id="clear-completed" {{action "clearCompleted"}}>
+          Clear completed ({{completed}})
+        </button>
+      {{/if}}
     </footer>
 
   </div>
