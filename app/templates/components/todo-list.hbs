@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="large-12 medium-12 small-12 columns">
+
+    {{input type="text" id="new-todo" placeholder="What needs to be done?" value=newTitle enter="createTodo"}}
+
+    <div class="">
+      {{outlet}}
+      <input type="checkbox" id="toggle-all">
+    </div>
+
+
+    <footer class="">
+      <span id="todo-count">
+        <strong>{{remaining}}</strong> {{inflection}} left
+      </span>
+      <div id="filters">
+        <div>
+          {{#link-to "todos.index" activeClass="selected"}}All{{/link-to}}
+        </div>
+        <div>
+          {{#link-to "todos.active" activeClass="selected"}}Active{{/link-to}}
+        </div>
+        <div>
+          {{#link-to "todos.complete" activeClass="selected"}}Complete{{/link-to}}
+        </div>
+      </div>
+
+      <button id="clear-completed">
+        Clear completed (1)
+      </button>
+    </footer>
+
+  </div>
+</div>

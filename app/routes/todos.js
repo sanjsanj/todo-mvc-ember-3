@@ -10,7 +10,6 @@ export default Ember.Route.extend({
         title: newTitle,
         isCompleted: false
       });
-      this.controllerFor('todos').set('newTitle', '');
       todo.save();
     },
     acceptChanges: function(todo) {
