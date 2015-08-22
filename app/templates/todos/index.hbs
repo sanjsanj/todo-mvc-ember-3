@@ -1,0 +1,5 @@
+<div id="todo-list">
+  {{#each model as |todo|}}
+    {{todo-item acceptChanges="acceptChanges" deleteTodo="deleteTodo" todo=todo}}
+  {{/each}}
+</div>
